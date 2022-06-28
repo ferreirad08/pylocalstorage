@@ -1,4 +1,5 @@
-import json
+from os import path
+from json import load, dumps
 
 
 class LocalStorage:
@@ -7,9 +8,12 @@ class LocalStorage:
     fname = None
     length = 0
 
-    def __init__(self, fname="localstorage.json"):
-        self.fname = fname
-        self.write_json({})
+    def __init__(self):
+        # Getting PATH of file
+        pathname, _ = path.split(path.abspath(__file__))
+        self.fname = path.join(pathname, "localstorage.json")
+        if not path.isfile(self.fname):
+            self.write_json({})
 
     def setItem(self, key, value):
         data = self.read_json()
@@ -34,10 +38,9 @@ class LocalStorage:
 
     def read_json(self):
         with open(self.fname, "r") as file:
-            return json.load(file)
+            return load(file)
 
     def write_json(self, data):
         with open(self.fname, "w") as file:
-            print(json.dumps(data), file=file)
+            print(dumps(data), file=file)
         self.length = len(data)
-
