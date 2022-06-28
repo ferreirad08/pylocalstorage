@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ferreirad08/localstorage/blob/main/LICENSE)
 
+A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
+
 ## Requirements
 * `python 3`
 
