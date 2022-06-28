@@ -1,0 +1,1 @@
+from .pylocalstorage import LocalStorage
