@@ -1,28 +1,28 @@
 from localstorage import LocalStorage
 
-# Iniciando um objeto LocalStorage
-local_storage = LocalStorage()
+# Conectando ao LocalStorage
+my_storage = LocalStorage()
 
 # Criando três itens
-local_storage.setItem("name", "David")
-local_storage.setItem("country", "Brazil")
-local_storage.setItem("city", "Manaus")
-print(local_storage.length)
+my_storage.setItem("name", "David")
+my_storage.setItem("country", "Brazil")
+my_storage.setItem("city", "Manaus")
+print(my_storage.length)
 
 # Atualizando um item
-local_storage.setItem("name", "David Ferreira")
+my_storage.setItem("name", "David Ferreira")
 
 # Obtendo um item
-print(local_storage.getItem("name"))
+print(my_storage.getItem("name"))
 
 # Removendo um item
-local_storage.removeItem("city")
-print(local_storage.getItem("city"))
+my_storage.removeItem("city")
+print(my_storage.getItem("city"))
 
 # Recuperando todas as chaves existentes
-for i in range(local_storage.length):
-    print(local_storage.key(i))
+for i in range(my_storage.length):
+    print(my_storage.key(i))
 
 # Limpando o LocalStorage
-local_storage.clear()
-print(local_storage.length)
+my_storage.clear()
+print(my_storage.length)
