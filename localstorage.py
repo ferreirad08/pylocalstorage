@@ -3,6 +3,7 @@ import json
 
 class LocalStorage:
 
+    __version__ = "1.0.0"
     fname = "localstorage.json"
     length = 0
 
