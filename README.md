@@ -1,7 +1,7 @@
 # pylocalstorage
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ferreirad08/pylocalstorage/blob/main/LICENSE)
-[![PyPI version](https://badge.fury.io/py/localstorage.svg)](https://badge.fury.io/py/pylocalstorage)
+[![PyPI version](https://badge.fury.io/py/pylocalstorage.svg)](https://badge.fury.io/py/pylocalstorage)
 
 A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
 
