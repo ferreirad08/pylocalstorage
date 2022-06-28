@@ -10,7 +10,7 @@
     from localstorage import LocalStorage
 
     # Iniciando um objeto LocalStorage
-    local_storage = LocalStorage("./localstorage.json")
+    local_storage = LocalStorage()
 
     # Criando três itens
     local_storage.setItem("name", "David")
