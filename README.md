@@ -1,6 +1,7 @@
 # localstorage
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ferreirad08/localstorage/blob/main/LICENSE)
+[![PyPI version](https://badge.fury.io/py/localstorage.svg)](https://badge.fury.io/py/localstorage)
 
 A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
 
