@@ -9,7 +9,7 @@ A package to store data on hard disk (HD) and make it available to all Python ap
 
 ## Installation
 
-Simply install localstorage package from PyPI
+Simply install localstorage package from [PyPI](https://pypi.org/project/localstorage/)
 
     pip install localstorage
 
