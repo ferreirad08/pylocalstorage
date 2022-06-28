@@ -14,6 +14,7 @@ class LocalStorage:
         self.fname = path.join(pathname, "localstorage.json")
         if not path.isfile(self.fname):
             self.write_json({})
+        self.length = len(self.read_json())
 
     def setItem(self, key, value):
         data = self.read_json()
