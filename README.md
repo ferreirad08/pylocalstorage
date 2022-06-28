@@ -7,6 +7,12 @@ A package to store data on hard disk (HD) and make it available to all Python ap
 ## Requirements
 * `python 3`
 
+## Installation
+
+Simply install localstorage package from PyPI
+
+    pip install localstorage
+
 ## Examples
 
     from localstorage import LocalStorage
