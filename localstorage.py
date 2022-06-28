@@ -4,10 +4,11 @@ import json
 class LocalStorage:
 
     __version__ = "1.0.0"
-    fname = "localstorage.json"
+    fname = None
     length = 0
 
-    def __init__(self):
+    def __init__(self, fname="localstorage.json"):
+        self.fname = fname
         self.write_json({})
 
     def setItem(self, key, value):
