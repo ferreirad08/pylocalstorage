@@ -1,4 +1,4 @@
-from localstorage import LocalStorage
+from pylocalstorage import LocalStorage
 
 # Conectando ao LocalStorage
 my_storage = LocalStorage()

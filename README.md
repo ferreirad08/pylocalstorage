@@ -1,7 +1,7 @@
-# localstorage
+# pylocalstorage
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ferreirad08/localstorage/blob/main/LICENSE)
-[![PyPI version](https://badge.fury.io/py/localstorage.svg)](https://badge.fury.io/py/localstorage)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ferreirad08/pylocalstorage/blob/main/LICENSE)
+[![PyPI version](https://badge.fury.io/py/localstorage.svg)](https://badge.fury.io/py/pylocalstorage)
 
 A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
 
@@ -10,13 +10,13 @@ A package to store data on hard disk (HD) and make it available to all Python ap
 
 ## Installation
 
-Simply install localstorage package from [PyPI](https://pypi.org/project/localstorage/)
+Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pylocalstorage/)
 
-    pip install localstorage
+    pip install pylocalstorage
 
 ## Examples
 
-    from localstorage import LocalStorage
+    from pylocalstorage import LocalStorage
 
     # Conectando ao LocalStorage
     my_storage = LocalStorage()
