@@ -1,3 +1,5 @@
+"""Tests for LocalStorage."""
+
 from pylocalstorage import LocalStorage
 
 
