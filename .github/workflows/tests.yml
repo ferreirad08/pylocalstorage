@@ -27,4 +27,4 @@ jobs:
       - run: coverage run --source pylocalstorage --branch -m pytest -v
       - run: coverage report -m
       - run: >-
-          curl -X PUT -H "Content-Type: application/json" -d "95" https://jsonblob.com/api/jsonBlob/1002315458195767296
+          curl -X PUT -H "Content-Type: application/json" -d '{"schemaVersion":1,"label":"hello","message": "sweet world","color":"orange"}' https://jsonblob.com/api/jsonBlob/1002315458195767296
