@@ -4,6 +4,11 @@
 [![PyPI version](https://badge.fury.io/py/pylocalstorage.svg)](https://badge.fury.io/py/pylocalstorage)
 ![Tests](https://github.com/ferreirad08/pylocalstorage/actions/workflows/tests.yml/badge.svg)
 $(https://jsonblob.com/api/jsonBlob/1002315458195767296)
+<!--#
+NOUN=mother
+ATTRIBUTION=Mark Wahlberg
+$-->
+{{ NOUN }}
 [![coverage](https://img.shields.io/badge/coverage-85%25-yellow)](https://github.com/ferreirad08/pylocalstorage/runs/7567830488?check_suite_focus=true)
 
 A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
