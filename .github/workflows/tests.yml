@@ -26,5 +26,6 @@ jobs:
       - run: pip install pytest coverage
       - run: coverage run --source pylocalstorage --branch -m pytest -v
       - run: coverage report -m
+      - run: COVERAGE="87"
       - run: >-
-          curl -X PUT -H "Content-Type: application/json" -d '{"schemaVersion":1,"label":"coverage","message":"85%","color":"yellow"}' https://jsonblob.com/api/jsonBlob/1002315458195767296
+          curl -X PUT -H "Content-Type: application/json" -d '{"schemaVersion":1,"label":"coverage","message":"$COVERAGE%","color":"yellow"}' https://jsonblob.com/api/jsonBlob/1002315458195767296
