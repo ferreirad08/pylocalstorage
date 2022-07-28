@@ -3,7 +3,7 @@ name: Tests
 on: [push]
 
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: pip install pytest
