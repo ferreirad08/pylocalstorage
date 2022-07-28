@@ -21,5 +21,5 @@ jobs:
 
     steps:
       - run: pip install pytest
-      - run: ls /home/runner/work/pylocalstorage/pylocalstorage
+      - run: cd ..
       - run: pytest ./test_pylocalstorage.py -v
