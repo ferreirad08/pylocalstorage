@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: [ubuntu-latest, windows-latest]
     steps:
       - run: pip install pytest
       - run: pytest
