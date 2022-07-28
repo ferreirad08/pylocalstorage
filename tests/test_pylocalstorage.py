@@ -24,4 +24,4 @@ class TestLocalStorage:
         storage.setItem("x", "this")
         storage.removeItem("x")
         x = storage.getItem("x")
-        assert x != None
+        assert x == None
