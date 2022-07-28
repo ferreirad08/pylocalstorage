@@ -22,4 +22,4 @@ jobs:
     steps:
       - run: pip install pytest
       - run: cd ..
-      - run: pytest ./test_pylocalstorage.py -v
+      - run: pytest -v
