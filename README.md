@@ -3,10 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ferreirad08/pylocalstorage/blob/main/LICENSE)
 [![PyPI version](https://badge.fury.io/py/pylocalstorage.svg)](https://badge.fury.io/py/pylocalstorage)
 ![Tests](https://github.com/ferreirad08/pylocalstorage/actions/workflows/tests.yml/badge.svg)
-$(https://jsonblob.com/api/jsonBlob/1002315458195767296)
-NOUN=mother
-{{ NOUN }}
-[![coverage](https://img.shields.io/badge/coverage-85%25-yellow)](https://github.com/ferreirad08/pylocalstorage/runs/7567830488?check_suite_focus=true)
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fjsonblob.com%2Fapi%2FjsonBlob%2F1002315458195767296)
 
 A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
 
