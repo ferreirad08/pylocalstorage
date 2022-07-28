@@ -26,4 +26,5 @@ jobs:
       - run: pip install pytest coverage
       - run: coverage run --source pylocalstorage --branch -m pytest -v
       - run: coverage report -m
-      - run: curl -X PUT -H "Content-Type: application/json" -d "95" https://jsonblob.com/api/jsonBlob/1002315458195767296
+      - run: >-
+          curl -X PUT -H "Content-Type: application/json" -d "95" https://jsonblob.com/api/jsonBlob/1002315458195767296
