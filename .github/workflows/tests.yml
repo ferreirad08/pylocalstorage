@@ -20,5 +20,8 @@ jobs:
     name: ${{ matrix.os }}, Python ${{ matrix.python-version }}
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
       - run: pip install pytest
       - run: pytest tests
