@@ -23,5 +23,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: pip install pytest
-      - run: pytest tests -v
+      - run: pip install pytest coverage
+      - run: coverage run --source pylocalstorage --branch -m pytest
+      - run: coverage report -m
