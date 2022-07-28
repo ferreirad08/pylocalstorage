@@ -7,7 +7,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: pip install pytest
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - run: pytest
