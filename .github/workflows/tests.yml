@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - run: pip install pytest
-      - run: ls
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - run: pytest
