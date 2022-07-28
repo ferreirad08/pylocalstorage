@@ -4,7 +4,16 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version:
+          - '2.7'
+          - '3.6'
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
     steps:
-      - run: pip install pytest pytest-github-actions-annotate-failures
+      - run: pip install pytest
       - run: pytest
