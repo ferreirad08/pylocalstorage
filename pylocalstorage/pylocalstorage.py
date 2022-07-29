@@ -47,8 +47,9 @@ class LocalStorage:
 
     def __write_json(self, data):
         try:
+            data_str = dumps(data)
             with open(self.__fname, "w") as file:
-                print(dumps(data), file=file)
+                print(data_str, file=file)
             self.length = len(data)
         except:
             raise WriteStorageError
