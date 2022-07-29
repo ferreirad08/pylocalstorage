@@ -33,4 +33,4 @@ jobs:
           set /p COV= <temp2.txt
           DEL /q temp.txt
           DEL /q temp2.txt
-          curl -X PUT -H "Content-Type: application/json" -d '{"schemaVersion":1,"label":"coverage","message":"'%COV%'","color":"yellow"}' https://jsonblob.com/api/jsonBlob/1002315458195767296
+          curl -X PUT -H "Content-Type: application/json" -d "{'schemaVersion':1,'label':'coverage','message':'%COV%','color':'yellow'}" https://jsonblob.com/api/jsonBlob/1002315458195767296
