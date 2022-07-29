@@ -40,7 +40,7 @@ class TestLocalStorage:
         x = storage.getItem("x")
         assert x == None
 
-    def test_key_in(self):
+    def test_key(self):
         storage = LocalStorage()
         storage.setItem("x", "this")
         assert "x" in [storage.key(i) for i in range(storage.length)]
