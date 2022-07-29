@@ -9,7 +9,7 @@
 A package to store data on the hard disk (HD) and make it available to all Python applications running locally!
 
 ## Requirements
-* `python>=2.7`
+* `Python 2.7 or higher`
 
 ## Installation
 
