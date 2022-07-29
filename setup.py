@@ -8,7 +8,7 @@ setup(
     version='1.0.1',
     author='David Ferreira',
     author_email='ferreirad08@gmail.com',
-    description='A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!',
+    description='A package to store data on the hard disk (HD) and make it available to all Python applications running locally!',
     long_description=readme,
     long_description_content_type='text/markdown',
     url='https://github.com/ferreirad08/pylocalstorage',
