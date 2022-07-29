@@ -44,3 +44,10 @@ class TestLocalStorage:
         storage = LocalStorage()
         storage.setItem("x", "this")
         assert "x" in [storage.key(i) for i in range(storage.length)]
+
+    def test_clear(self):
+        storage = LocalStorage()
+        storage.setItem("x", "this")
+        assert storage.length > 0
+        storage.clear()
+        assert storage.length == 0
