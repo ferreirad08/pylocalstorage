@@ -23,7 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: |
+      - if: ${{ matrix.os == ubuntu-latest' }}
+        run: |
           pip install pytest coverage
           coverage run --source pylocalstorage --branch -m pytest -v
           # coverage report -m | findstr /c:"TOTAL"
