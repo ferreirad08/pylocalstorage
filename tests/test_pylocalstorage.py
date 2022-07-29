@@ -1,6 +1,6 @@
 """Tests for LocalStorage."""
 
-from pylocalstorage import LocalStorage
+from pylocalstorage import LocalStorage, WriteStorageError
 import pytest
 
 
