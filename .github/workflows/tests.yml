@@ -31,4 +31,4 @@ jobs:
         run: |
           # coverage report -m | findstr /c:"TOTAL"
           COV=$(coverage report -m | grep 'TOTAL' | awk '{print $NF}')
-          curl -X PUT -H "Content-Type: application/json" -d '{"schemaVersion":1,"label":"coverage","message":"'$COV'","color":"yellow"}' https://jsonblob.com/api/jsonBlob/1002315458195767296
+          curl -X PUT -H "Content-Type: application/json" -d '{"schemaVersion":1,"label":"coverage","message":"'$COV'","color":"yellow","namedLogo":"jest"}' https://jsonblob.com/api/jsonBlob/1002315458195767296
