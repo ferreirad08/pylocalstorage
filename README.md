@@ -6,7 +6,7 @@
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fjsonblob.com%2Fapi%2FjsonBlob%2F1002315458195767296)
 [![Downloads](https://pepy.tech/badge/pylocalstorage/month)](https://pepy.tech/project/pylocalstorage)
 
-A package to store data on hard disk (HD) and make it available to all Python applications running in parallel!
+A package to store data on the hard disk (HD) and make it available to all Python applications running locally!
 
 ## Requirements
 * `python>=2.7`
