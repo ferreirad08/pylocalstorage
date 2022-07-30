@@ -5,7 +5,7 @@ my_storage = LocalStorage()
 
 # Creating three items
 my_storage.setItem("name", "David")
-my_storage.setItem("age", "29")
+my_storage.setItem("age", 29)
 my_storage.setItem("address", {
     "country": "Brazil",
     "city": "Manaus"
