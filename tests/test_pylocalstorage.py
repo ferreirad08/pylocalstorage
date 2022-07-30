@@ -6,14 +6,8 @@ import pytest
 
 class TestLocalStorage:
 
-    @pytest.mark.parametrize(
-        "exception, value",
-        (
-            (WriteStorageError, int),
-            (WriteStorageError, str),
-        ),
-    )
-    def test_invalid_value(self, exception, value):
+    @pytest.mark.parametrize("value", (int, str,),)
+    def test_invalid_value(self, value):
         try:
             storage = LocalStorage()
             storage.setItem("x", value)
