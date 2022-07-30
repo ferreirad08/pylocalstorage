@@ -24,13 +24,14 @@ Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pyloc
     # Connecting to LocalStorage
     my_storage = LocalStorage()
 
-    # Creating two items
+    # Creating three items
     my_storage.setItem("name", "David")
+    my_storage.setItem("age", 29)
     my_storage.setItem("address", {
         "country": "Brazil",
-        "city", "Manaus"
+        "city": "Manaus"
     })
-    print(my_storage.length)
+    print("Number of keys:", my_storage.length)
 
     # Updating an item
     my_storage.setItem("name", "David Ferreira")
@@ -39,8 +40,8 @@ Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pyloc
     print(my_storage.getItem("name"))
 
     # Removing an item
-    my_storage.removeItem("address")
-    print(my_storage.getItem("address"))
+    my_storage.removeItem("name")
+    print(my_storage.getItem("name"))
 
     # Retrieving all existing keys
     for i in range(my_storage.length):
@@ -48,4 +49,5 @@ Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pyloc
 
     # Cleaning up LocalStorage
     my_storage.clear()
-    print(my_storage.length)
+    print("Number of keys:", my_storage.length)
+
