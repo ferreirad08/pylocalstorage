@@ -3,8 +3,9 @@ from pylocalstorage import LocalStorage
 # Connecting to LocalStorage
 my_storage = LocalStorage()
 
-# Creating two items
+# Creating three items
 my_storage.setItem("name", "David")
+my_storage.setItem("age", "29")
 my_storage.setItem("address", {
     "country": "Brazil",
     "city": "Manaus"
