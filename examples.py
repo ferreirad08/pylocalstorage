@@ -3,11 +3,13 @@ from pylocalstorage import LocalStorage
 # Connecting to LocalStorage
 my_storage = LocalStorage()
 
-# Creating three items
+# Creating two items
 my_storage.setItem("name", "David")
-my_storage.setItem("country", "Brazil")
-my_storage.setItem("city", "Manaus")
-print(my_storage.length)
+my_storage.setItem("address", {
+    "country": "Brazil",
+    "city": "Manaus"
+})
+print("Number of keys:", my_storage.length)
 
 # Updating an item
 my_storage.setItem("name", "David Ferreira")
@@ -16,8 +18,8 @@ my_storage.setItem("name", "David Ferreira")
 print(my_storage.getItem("name"))
 
 # Removing an item
-my_storage.removeItem("city")
-print(my_storage.getItem("city"))
+my_storage.removeItem("name")
+print(my_storage.getItem("name"))
 
 # Retrieving all existing keys
 for i in range(my_storage.length):
@@ -25,4 +27,4 @@ for i in range(my_storage.length):
 
 # Cleaning up LocalStorage
 my_storage.clear()
-print(my_storage.length)
+print("Number of keys:", my_storage.length)
