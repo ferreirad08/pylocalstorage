@@ -10,7 +10,7 @@ my_storage.setItem("address", {
     "country": "Brazil",
     "city": "Manaus"
 })
-print("Number of keys:", my_storage.length)
+print("Number of items:", my_storage.length)
 
 # Updating an item
 my_storage.setItem("name", "David Ferreira")
@@ -20,7 +20,6 @@ print(my_storage.getItem("name"))
 
 # Removing an item
 my_storage.removeItem("name")
-print(my_storage.getItem("name"))
 
 # Retrieving all existing keys
 for i in range(my_storage.length):
@@ -28,4 +27,4 @@ for i in range(my_storage.length):
 
 # Cleaning up LocalStorage
 my_storage.clear()
-print("Number of keys:", my_storage.length)
+print("Number of items:", my_storage.length)
