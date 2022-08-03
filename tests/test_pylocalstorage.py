@@ -27,6 +27,17 @@ class TestLocalStorage:
         x = storage.getItem(key)
         assert x == value
 
+    def test_removeItemWithoutExcept(self):
+        try:
+            storage = LocalStorage()
+            storage.setItem("anything", "this")
+            storage.removeItem("anything")
+            storage.removeItem("anything")
+        except:
+            assert False
+        else:
+            assert True
+
     def test_removeItem(self):
         storage = LocalStorage()
         storage.setItem("x", "this")
