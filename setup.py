@@ -5,7 +5,7 @@ with open('README.md', 'r') as readmefile:
 
 setup(
     name='pylocalstorage',
-    version='1.0.1',
+    version='1.0.2',
     author='David Ferreira',
     author_email='ferreirad08@gmail.com',
     description='A package to store data on the hard disk (HD) and make it available to all Python applications running locally!',
