@@ -1,8 +1,6 @@
 """Tests for LocalStorage."""
 
 from pylocalstorage import LocalStorage, WriteStorageError
-from glob import glob
-print(glob("*"))
 import pytest
 
 
