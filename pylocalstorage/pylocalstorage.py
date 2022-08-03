@@ -28,8 +28,9 @@ class LocalStorage:
 
     def removeItem(self, key):
         data = self.__read_json()
-        del data[key]
-        self.__write_json(data)
+        if key in data:
+            del data[key]
+            self.__write_json(data)
 
     def clear(self):
         self.__write_json({})
