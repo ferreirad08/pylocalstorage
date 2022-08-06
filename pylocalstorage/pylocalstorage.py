@@ -36,8 +36,9 @@ class LocalStorage:
         self.__write_json({})
 
     def key(self, index):
-    	data = self.__read_json()
-    	return list(data.keys())[index]
+        if 0 <= index < self.length:
+    	    data = self.__read_json()
+    	    return list(data.keys())[index]
 
     def __read_json(self):
         try:
