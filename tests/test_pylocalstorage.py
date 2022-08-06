@@ -49,7 +49,8 @@ class TestLocalStorage:
         storage = LocalStorage()
         storage.setItem("x", "this")
         assert storage.key(-1) is None
-        assert "x" in [storage.key(i) for i in range(storage.length)]
+        assert storage.key(storage.length) is None
+        assert None not in [storage.key(i) for i in range(storage.length)]
 
     def test_clear(self):
         storage = LocalStorage()
