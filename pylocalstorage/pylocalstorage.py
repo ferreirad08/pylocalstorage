@@ -4,7 +4,7 @@ from json import load, dumps
 
 class LocalStorage:
 
-    __version__ = "1.0.2"
+    __version__ = "1.0.3"
     __fname = None
     length = 0
 
