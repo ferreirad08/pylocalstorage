@@ -1,7 +1,7 @@
-from os.path import split, abspath, isfile
+from os.path import split, abspath, isfile, exists
+from os import remove, mkdir
 from json import load, dumps
 from glob import glob
-from os import remove
 
 
 class LocalStorage:
@@ -15,6 +15,9 @@ class LocalStorage:
     def __init__(self):
         # Getting PATH of file
         self.__pathname, _ = split(abspath(__file__))
+        self.__pathname += "/data"
+        if not exists(self.__pathname):
+            mkdir(self.__pathname)
         self.__filename = self.__pathname + "/{}.json"
         self.__regex = self.__pathname + "/*.json"
         self.length = len(glob(self.__regex))
