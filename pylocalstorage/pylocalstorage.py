@@ -64,4 +64,4 @@ class BaseError(Exception):
 
 
 class WriteStorageError(BaseError):
-    message = "Unable to save data"
+    message = "Could not serialize the data"
