@@ -1,1 +1,1 @@
-from .pylocalstorage import LocalStorage, ReadStorageError, WriteStorageError
+from .pylocalstorage import LocalStorage, WriteStorageError
