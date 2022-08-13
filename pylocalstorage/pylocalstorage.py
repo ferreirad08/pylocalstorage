@@ -1,60 +1,54 @@
-from os import path
+from os.path import split, abspath, isfile
 from json import load, dumps
+from glob import glob
+from os import remove
 
 
 class LocalStorage:
 
-    __version__ = "1.0.3"
-    __fname = None
+    __version__ = "1.1.0"
+    __pathname = None
+    __filename = None
+    __regex = None
     length = 0
 
     def __init__(self):
         # Getting PATH of file
-        pathname, _ = path.split(path.abspath(__file__))
-        self.__fname = path.join(pathname, "localstorage.json")
-        if not path.isfile(self.__fname):
-            self.__write_json({})
-        else:
-            self.length = len(self.__read_json())
+        self.__pathname, _ = split(abspath(__file__))
+        self.__filename = self.__pathname + "/{}.json"
+        self.__regex = self.__pathname + "/*.json"
+        self.length = len(glob(self.__regex))
 
     def setItem(self, key, value):
-        data = self.__read_json()
-        data[key] = value
-        self.__write_json(data)
+        try:
+            value_str = dumps(value)
+            with open(self.__filename.format(key), "w") as file:
+                print(value_str, file=file)
+            self.length = len(glob(self.__regex))
+        except:
+            raise WriteStorageError
 
     def getItem(self, key):
-        data = self.__read_json()
-        return data.get(key)
+        fname = self.__filename.format(key)
+        if isfile(fname):
+            with open(fname) as file:
+                return load(file)
 
     def removeItem(self, key):
-        data = self.__read_json()
-        if key in data:
-            del data[key]
-            self.__write_json(data)
+        fname = self.__filename.format(key)
+        if isfile(fname):
+            remove(fname)
+        self.length = len(glob(self.__regex))
 
     def clear(self):
-        self.__write_json({})
+        for fname in glob(self.__regex):
+            remove(fname)
+        self.length = len(glob(self.__regex))
 
     def key(self, index):
         if 0 <= index < self.length:
-    	    data = self.__read_json()
-    	    return list(data.keys())[index]
-
-    def __read_json(self):
-        try:
-            with open(self.__fname, "r") as file:
-                return load(file)
-        except:
-            raise ReadStorageError
-
-    def __write_json(self, data):
-        try:
-            data_str = dumps(data)
-            with open(self.__fname, "w") as file:
-                print(data_str, file=file)
-            self.length = len(data)
-        except:
-            raise WriteStorageError
+            _, key = split(glob(self.__regex)[index])
+            return key.replace(".json", "")
 
 
 class BaseError(Exception):
@@ -64,10 +58,6 @@ class BaseError(Exception):
     def __init__(self) -> None:
         class_name = self.__class__.__name__
         super().__init__(f"{class_name}(message={self.message})")
-
-
-class ReadStorageError(BaseError):
-    message = "Unable to recover data"
 
 
 class WriteStorageError(BaseError):
