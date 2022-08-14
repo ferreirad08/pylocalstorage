@@ -28,7 +28,7 @@ class LocalStorage:
             value_str = dumps(value)
             with open(self.__filename.format(key), "w") as file:
                 print(value_str, file=file)
-            self.length = len(self.list_json())
+            self.length = self.update_length()
         except:
             raise WriteStorageError
 
@@ -42,12 +42,12 @@ class LocalStorage:
         fname = self.__filename.format(key)
         if isfile(fname):
             remove(fname)
-        self.length = len(self.list_json())
+        self.length = self.update_length()
 
     def clear(self):
         for fname in self.list_json():
             remove(fname)
-        self.length = len(self.list_json())
+        self.length = self.update_length()
 
     def key(self, index):
         if 0 <= index < self.length:
