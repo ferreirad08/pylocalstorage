@@ -20,7 +20,7 @@ class LocalStorage:
             mkdir(self.__pathname)
         self.__filename = self.__pathname + "/{}.json"
         self.__regex = self.__pathname + "/*.json"
-        self.list_json = lambda: self.list_json()
+        self.list_json = lambda: glob(self.__regex)
         self.length = len(self.list_json())
 
     def setItem(self, key, value):
