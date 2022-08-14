@@ -9,7 +9,6 @@ class LocalStorage:
     __version__ = "1.1.0"
     __pathname = None
     __filename = None
-    __regex = None
     length = 0
 
     def __init__(self):
