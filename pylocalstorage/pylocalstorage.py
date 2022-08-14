@@ -20,15 +20,15 @@ class LocalStorage:
             mkdir(self.__pathname)
         self.__filename = self.__pathname + "/{}.json"
         self.__regex = self.__pathname + "/*.json"
-        list_json = lambda: glob(self.__regex)
-        self.length = len(glob(self.__regex))
+        self.list_json = lambda: self.list_json()
+        self.length = len(self.list_json())
 
     def setItem(self, key, value):
         try:
             value_str = dumps(value)
             with open(self.__filename.format(key), "w") as file:
                 print(value_str, file=file)
-            self.length = len(glob(self.__regex))
+            self.length = len(self.list_json())
         except:
             raise WriteStorageError
 
@@ -42,16 +42,16 @@ class LocalStorage:
         fname = self.__filename.format(key)
         if isfile(fname):
             remove(fname)
-        self.length = len(glob(self.__regex))
+        self.length = len(self.list_json())
 
     def clear(self):
-        for fname in glob(self.__regex):
+        for fname in self.list_json():
             remove(fname)
-        self.length = len(glob(self.__regex))
+        self.length = len(self.list_json())
 
     def key(self, index):
         if 0 <= index < self.length:
-            _, key = split(glob(self.__regex)[index])
+            _, key = split(self.list_json()[index])
             return key.replace(".json", "")
 
 
