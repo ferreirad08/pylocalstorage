@@ -7,18 +7,17 @@ from glob import glob
 class LocalStorage:
 
     __version__ = "1.1.0"
-    __pathname = None
     __filename = None
     length = 0
 
     def __init__(self):
         # Getting PATH of file
-        self.__pathname, _ = split(abspath(__file__))
-        self.__pathname += "/data"
-        if not exists(self.__pathname):
-            mkdir(self.__pathname)
-        self.__filename = self.__pathname + "/{}.json"
-        self.list_json = lambda: glob(self.__pathname + "/*.json")
+        pathname, _ = split(abspath(__file__))
+        pathname += "/data"
+        if not exists(pathname):
+            mkdir(pathname)
+        self.__filename = pathname + "/{}.json"
+        self.list_json = lambda: glob(pathname + "/*.json")
         self.update_length = lambda: len(self.list_json())
         self.length = self.update_length()
 
