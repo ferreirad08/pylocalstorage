@@ -17,16 +17,16 @@ class LocalStorage:
         if not exists(pathname):
             mkdir(pathname)
         self.__filename = pathname + "/{}.json"
-        self.list_json = lambda: glob(pathname + "/*.json")
-        self.update_length = lambda: len(self.list_json())
-        self.length = self.update_length()
+        self.__list_json = lambda: glob(pathname + "/*.json")
+        self.__update_length = lambda: len(self.__list_json())
+        self.length = self.__update_length()
 
     def setItem(self, key, value):
         try:
             value_str = dumps(value)
             with open(self.__filename.format(key), "w") as file:
                 print(value_str, file=file)
-            self.length = self.update_length()
+            self.length = self.__update_length()
         except:
             raise WriteStorageError
 
@@ -40,16 +40,16 @@ class LocalStorage:
         fname = self.__filename.format(key)
         if isfile(fname):
             remove(fname)
-        self.length = self.update_length()
+        self.length = self.__update_length()
 
     def clear(self):
-        for fname in self.list_json():
+        for fname in self.__list_json():
             remove(fname)
-        self.length = self.update_length()
+        self.length = self.__update_length()
 
     def key(self, index):
         if 0 <= index < self.length:
-            _, key = split(self.list_json()[index])
+            _, key = split(self.__list_json()[index])
             return key.replace(".json", "")
 
 
