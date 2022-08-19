@@ -18,6 +18,7 @@ Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pyloc
     pip install pylocalstorage
 
 ## Examples
+
     ```python
     >>> from pylocalstorage import LocalStorage
     >>> ls = LocalStorage()
