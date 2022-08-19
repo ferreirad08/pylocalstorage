@@ -16,7 +16,7 @@ A package to store data on the hard disk (HD) and make it available to all Pytho
 Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pylocalstorage/)
 
 ```bash
-pip install pylocalstorage
+$ pip install pylocalstorage
 ```
 
 ## Examples
