@@ -19,21 +19,21 @@ Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pyloc
 
 ## Examples
 
-    ```python
-    >>> from pylocalstorage import LocalStorage
-    >>> ls = LocalStorage()
-    >>> ls.setItem("name", "David")
-    >>> ls.setItem("age", 29)
-    >>> ls.setItem("address", {"country": "Brazil", "city": "Manaus"})
-    >>> ls.length
-    3
-    >>> ls.setItem("name", "David Ferreira")
-    >>> ls.getItem("name")
-    'David Ferreira'
-    >>> ls.removeItem("name")
-    >>> ls.key(0)
-    'age'
-    >>> ls.clear()
-    >>> ls.length
-    0
-    ```
+```python
+>>> from pylocalstorage import LocalStorage
+>>> ls = LocalStorage()
+>>> ls.setItem("name", "David")
+>>> ls.setItem("age", 29)
+>>> ls.setItem("address", {"country": "Brazil", "city": "Manaus"})
+>>> ls.length
+3
+>>> ls.setItem("name", "David Ferreira")
+>>> ls.getItem("name")
+'David Ferreira'
+>>> ls.removeItem("name")
+>>> ls.key(0)
+'age'
+>>> ls.clear()
+>>> ls.length
+0
+```
