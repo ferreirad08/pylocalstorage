@@ -19,34 +19,19 @@ Simply install pylocalstorage package from [PyPI](https://pypi.org/project/pyloc
 
 ## Examples
 
-    from pylocalstorage import LocalStorage
-
-    # Connecting to LocalStorage
-    my_storage = LocalStorage()
-
-    # Creating three items
-    my_storage.setItem("name", "David")
-    my_storage.setItem("age", 29)
-    my_storage.setItem("address", {
-        "country": "Brazil",
-        "city": "Manaus"
-    })
-    print("Number of items:", my_storage.length)
-
-    # Updating an item
-    my_storage.setItem("name", "David Ferreira")
-
-    # Getting an item
-    print(my_storage.getItem("name"))
-
-    # Removing an item
-    my_storage.removeItem("name")
-
-    # Retrieving all existing keys
-    for i in range(my_storage.length):
-        print(my_storage.key(i))
-
-    # Cleaning up LocalStorage
-    my_storage.clear()
-    print("Number of items:", my_storage.length)
-
+    >>> from pylocalstorage import LocalStorage
+    >>> ls = LocalStorage()
+    >>> ls.setItem("name", "David")
+    >>> ls.setItem("age", 29)
+    >>> ls.setItem("address", {"country": "Brazil", "city": "Manaus"})
+    >>> ls.length
+    3
+    >>> ls.setItem("name", "David Ferreira")
+    >>> ls.getItem("name")
+    'David Ferreira'
+    >>> ls.removeItem("name")
+    >>> ls.key(0)
+    'age'
+    >>> ls.clear()
+    >>> ls.length
+    0
