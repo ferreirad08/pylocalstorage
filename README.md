@@ -35,6 +35,8 @@ $ pip install pylocalstorage
 >>> ls.removeItem("name")
 >>> ls.key(0)
 'age'
+>>> ls.key(1)
+'address'
 >>> ls.clear()
 >>> ls.length
 0
