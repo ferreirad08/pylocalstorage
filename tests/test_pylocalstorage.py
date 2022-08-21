@@ -51,6 +51,7 @@ class TestLocalStorage:
         assert storage.key(-1) is None
         assert storage.key(storage.length) is None
         assert None not in [storage.key(i) for i in range(storage.length)]
+        assert storage.key("anything") is None
 
     def test_clear(self):
         storage = LocalStorage()
