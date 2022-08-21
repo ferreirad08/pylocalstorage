@@ -48,7 +48,7 @@ class LocalStorage:
         self.length = self.__update_length()
 
     def key(self, index):
-        if 0 <= index < self.length:
+        if isinstance(index, int) and 0 <= index < self.length:
             _, key = split(self.__list_json()[index])
             return key.replace(".json", "")
 
