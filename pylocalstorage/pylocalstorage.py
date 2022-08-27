@@ -6,7 +6,7 @@ from glob import glob
 
 class LocalStorage:
 
-    __version__ = "1.1.0"
+    __version__ = "1.1.1"
     __filename = None
     length = 0
 
