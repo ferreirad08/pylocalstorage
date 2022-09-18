@@ -19,7 +19,7 @@ class LocalStorage:
             value TEXT
         );
         """)
-        self.length = self.__get_length()
+        self.__update_length()
 
     def setItem(self, key, value) -> None:
         try:
@@ -29,7 +29,7 @@ class LocalStorage:
             VALUES ('{key}','{value_str}')
             ON CONFLICT(key) DO UPDATE SET value = '{value_str}';
             """)
-            self.length = self.__get_length()
+            self.__update_length()
         except:
             raise WriteStorageError
 
@@ -47,13 +47,13 @@ class LocalStorage:
         DELETE FROM LocalStorage
         WHERE key = '{key}';
         """)
-        self.length = self.__get_length()
+        self.__update_length()
 
     def clear(self) -> None:
         self.__engine.execute("""
         DELETE FROM LocalStorage;
         """)
-        self.length = self.__get_length()
+        self.__update_length()
 
     def key(self, index: int):
         if isinstance(index, int) and 0 <= index < self.length:
@@ -63,11 +63,11 @@ class LocalStorage:
             """))
             return result[index][0]
 
-    def __get_length(self) -> int:
+    def __update_length(self) -> None:
         result = list(self.__engine.execute("""
         SELECT COUNT(*) FROM LocalStorage;
         """))
-        return result[0][0]
+        self.length = result[0][0]
 
 
 class BaseError(Exception):
