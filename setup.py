@@ -27,4 +27,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=2.7',
+    project_urls={
+        "Source": "https://github.com/ferreirad08/pylocalstorage",
+    }
 )
