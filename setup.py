@@ -12,8 +12,8 @@ setup(
     long_description=readme,
     long_description_content_type='text/markdown',
     url='https://github.com/ferreirad08/pylocalstorage',
-    packages=find_packages(','),
-    install_requires=['<SQLAlchemy>'],
+    packages=find_packages(),
+    install_requires=[],
     license='MIT',
     classifiers=[
         "Programming Language :: Python :: 2.7",
