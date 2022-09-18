@@ -40,9 +40,9 @@ class TestLocalStorage:
 
     def test_saveDict(self):
         storage = LocalStorage()
-        address = {"country": "Brazil", "population": 215e6}
-        storage.setItem("address", address)
-        assert storage.getItem("address") == address
+        country = {"name": "Brazil", "population": 215e6}
+        storage.setItem("country", country)
+        assert storage.getItem("country") == country
 
     def test_removeItem(self):
         storage = LocalStorage()
