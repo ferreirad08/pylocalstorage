@@ -19,6 +19,7 @@ class TestLocalStorage:
         (
             ("x", "this"),
             ("x", "localhost"),
+            ("x", {"name": "Brazil", "population": 215e6}),
         ),
     )
     def test_setItem(self, key, value):
@@ -37,12 +38,6 @@ class TestLocalStorage:
             assert False
         else:
             assert True
-
-    def test_saveDict(self):
-        storage = LocalStorage()
-        country = {"name": "Brazil", "population": 215e6}
-        storage.setItem("country", country)
-        assert storage.getItem("country") == country
 
     def test_removeItem(self):
         storage = LocalStorage()
