@@ -5,7 +5,7 @@ from json import dumps, loads
 
 class LocalStorage:
 
-    __version__ = "1.2.0"
+    __version__ = "1.2.1"
     __engine = None
     length = 0
 
