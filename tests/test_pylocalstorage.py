@@ -17,6 +17,7 @@ class TestLocalStorage:
     @pytest.mark.parametrize(
         "key, value",
         (
+            ("x", 1),
             ("x", "this"),
             ("x", "localhost"),
             ("x", {"name": "Brazil", "population": 215e6}),
