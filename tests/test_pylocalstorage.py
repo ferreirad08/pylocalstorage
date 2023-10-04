@@ -60,4 +60,5 @@ class TestLocalStorage:
         storage.setItem("x", "this")
         assert storage.length > 0
         storage.clear()
+        assert storage.key(0) is None
         assert storage.length == 0
