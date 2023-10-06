@@ -3,8 +3,6 @@ from json import dumps, loads
 
 from sqlalchemy import create_engine, text
 
-from .exceptions import WriteStorageError
-
 
 class LocalStorage:
 
@@ -71,3 +69,16 @@ class LocalStorage:
         with self.__lock:
             with self.__engine.begin() as connection:
                 return connection.execute(text(query))
+
+
+class BaseError(Exception):
+    """Base class for other exceptions"""
+    message: str = None
+
+    def __init__(self) -> None:
+        class_name = self.__class__.__name__
+        super().__init__(f"{class_name}(message={self.message})")
+
+
+class WriteStorageError(BaseError):
+    message = "Could not serialize the data"
