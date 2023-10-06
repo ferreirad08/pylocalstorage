@@ -87,7 +87,7 @@ class WriteStorageError(BaseError):
 
 class ObjectPersistence:
 
-    __path = __file__.replace("newfile.py", "buffer/")
+    __path = __file__.replace("pylocalstorage.py", "buffer/")
     os.system(f"mkdir -p {__path}")
 
     def setItem(self, key, arg):
