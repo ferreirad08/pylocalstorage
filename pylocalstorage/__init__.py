@@ -1,5 +1,5 @@
 try:
-    from sqlalchemy import create_engine
+    import sqlalchemy
 except:
     from os import system
     system("pip install SQLAlchemy")
