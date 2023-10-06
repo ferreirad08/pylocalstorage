@@ -1,4 +1,5 @@
 from json import dumps, loads
+from threading import Lock
 
 from sqlalchemy import create_engine, text
 
@@ -6,6 +7,7 @@ from sqlalchemy import create_engine, text
 class LocalStorage:
 
     __engine = None
+    __lock = Lock()
     __version__ = "1.3.0"
 
     length = 0
@@ -56,10 +58,7 @@ class LocalStorage:
 
     def key(self, index: int):
         if isinstance(index, int) and 0 <= index < self.length:
-            result = self.__executeQuery("""
-            SELECT key
-            FROM LocalStorage;
-            """)
+            result = self.__executeQuery("SELECT key FROM LocalStorage;")
             return list(result)[index][0]
 
     def __update_length(self) -> None:
@@ -67,8 +66,9 @@ class LocalStorage:
         self.length = list(result)[0][0]
 
     def __executeQuery(self, query):
-        with self.__engine.begin() as connection:
-            return connection.execute(text(query))
+        with self.__lock:
+            with self.__engine.begin() as connection:
+                return connection.execute(text(query))
 
 
 class BaseError(Exception):
