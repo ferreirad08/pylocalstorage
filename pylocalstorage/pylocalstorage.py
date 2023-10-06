@@ -8,16 +8,15 @@ from sqlalchemy import create_engine, text
 
 class LocalStorage:
 
-    __engine = None
-    __lock = Lock()
     __version__ = "1.3.0"
+
+    __lock = Lock()
+    __dbpath = __file__.replace("pylocalstorage.py", "localStorage.db")
+    __engine = create_engine(f"sqlite:///{__dbpath}")
 
     length = 0
 
     def __init__(self) -> None:
-        dbpath = __file__.replace("pylocalstorage.py", "localStorage.db")
-        self.__engine = create_engine(f"sqlite:///{dbpath}")
-
         self.__executeQuery("""
         CREATE TABLE IF NOT EXISTS LocalStorage (
             key TEXT UNIQUE,
@@ -116,6 +115,7 @@ if __name__ == "__main__":
 
     op.setItem("test", 1.2)
     op.clear()
+
     op.setItem("test", "Hello")
     print(op.getItem("test"))
 
