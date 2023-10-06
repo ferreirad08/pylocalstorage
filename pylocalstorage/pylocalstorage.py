@@ -108,16 +108,3 @@ class ObjectPersistence:
 
     def clear(self):
         os.system(f"rm -rf {self.__path} && mkdir {self.__path}")
-
-
-if __name__ == "__main__":
-    op = ObjectPersistence()
-
-    op.setItem("test", 1.2)
-    op.clear()
-
-    op.setItem("test", "Hello")
-    print(op.getItem("test"))
-
-    op.removeItem("test")
-    print(op.getItem("test"))
