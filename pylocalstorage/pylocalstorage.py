@@ -1,6 +1,4 @@
-import os
 from threading import Lock
-from pickle import dump, load
 from json import dumps, loads
 
 from sqlalchemy import create_engine, text
@@ -83,28 +81,3 @@ class BaseError(Exception):
 
 class WriteStorageError(BaseError):
     message = "Could not serialize the data"
-
-
-class ObjectPersistence:
-
-    __path = __file__.replace("pylocalstorage.py", "buffer/")
-    os.system(f"mkdir -p {__path}")
-
-    def setItem(self, key, arg):
-        self.removeItem(key)
-
-        with open(f"{self.__path}{key}.pkl", "wb") as pklfile:
-            dump(arg, pklfile)
-
-    def getItem(self, key):
-        fname = f"{self.__path}{key}.pkl"
-
-        if os.path.exists(fname):
-            with open(fname, "rb") as pklfile:
-                return load(pklfile)
-
-    def removeItem(self, key):
-        os.system(f"rm -f {self.__path}{key}.pkl")
-
-    def clear(self):
-        os.system(f"rm -rf {self.__path} && mkdir {self.__path}")
