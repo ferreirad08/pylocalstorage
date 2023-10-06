@@ -51,9 +51,7 @@ class LocalStorage:
         self.__update_length()
 
     def clear(self) -> None:
-        self.__executeQuery("""
-        DELETE FROM LocalStorage;
-        """)
+        self.__executeQuery("DELETE FROM LocalStorage;")
         self.__update_length()
 
     def key(self, index: int):
@@ -65,9 +63,7 @@ class LocalStorage:
             return list(result)[index][0]
 
     def __update_length(self) -> None:
-        result = self.__executeQuery("""
-        SELECT COUNT(*) FROM LocalStorage;
-        """)
+        result = self.__executeQuery("SELECT COUNT(*) FROM LocalStorage;")
         self.length = list(result)[0][0]
 
     def __executeQuery(self, query):
