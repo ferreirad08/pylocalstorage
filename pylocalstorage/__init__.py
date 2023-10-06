@@ -6,3 +6,4 @@ except:
 
 from .local_storage import LocalStorage
 from .exceptions import WriteStorageError
+from .object_persistence import ObjectPersistence
