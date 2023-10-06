@@ -4,4 +4,4 @@ except:
     from os import system
     system("pip install SQLAlchemy")
 
-from .pylocalstorage import LocalStorage, WriteStorageError, ObjectPersistence
+from .pylocalstorage import LocalStorage, WriteStorageError
