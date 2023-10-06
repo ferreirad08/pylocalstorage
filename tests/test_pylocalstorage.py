@@ -57,6 +57,7 @@ class TestLocalStorage:
 
     def test_clear(self):
         storage = LocalStorage()
+        storage.clear()
         storage.setItem("x", "this")
         assert storage.length > 0
         storage.clear()
