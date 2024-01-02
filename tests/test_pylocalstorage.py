@@ -33,7 +33,7 @@ class TestLocalStorage:
     @pytest.mark.parametrize(
         "key, value",
         (
-            ("array", np.zeros((1080, 1920, 3), dtype=np.uint8),
+            ("array", np.zeros((1080, 1920, 3), dtype=np.uint8)),
         ),
     )
     def test_numpy_setItem(self, key, value):
