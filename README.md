@@ -35,11 +35,14 @@ $ pip install pylocalstorage
 >>> ls.getItem("name")
 'David Ferreira'
 >>> ls.removeItem("name")
+>>> import numpy as np
+>>> ls.setItem("array", np.zeros((1080, 1920, 3), dtype=np.uint8))
 >>> for i in range(ls.length):
 ...     print(ls.key(i))
 ...
-'age'
 'address'
+'age'
+'array'
 >>> ls.clear()
 >>> ls.length
 0
