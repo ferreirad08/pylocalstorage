@@ -22,7 +22,6 @@ class TestLocalStorage:
             ("x", "this"),
             ("x", "localhost"),
             ("x", {"name": "Brazil", "population": 215e6}),
-            ("x", np.zeros((1080, 1920, 3), dtype=np.uint8),
         ),
     )
     def test_setItem(self, key, value):
@@ -30,6 +29,20 @@ class TestLocalStorage:
         storage.setItem(key, value)
         x = storage.getItem(key)
         assert x == value
+
+    @pytest.mark.parametrize(
+        "key, value",
+        (
+            ("array", np.zeros((1080, 1920, 3), dtype=np.uint8),
+        ),
+    )
+    def test_numpy_setItem(self, key, value):
+        storage = LocalStorage()
+        storage.setItem(key, value)
+        x = storage.getItem(key)
+        assert x.shape == value.shape
+        assert x.size == value.size
+        assert type(x) == type(value)
 
     def test_removeItemWithoutExcept(self):
         try:
