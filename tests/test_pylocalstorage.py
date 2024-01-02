@@ -1,7 +1,8 @@
 """Tests for LocalStorage."""
 
-from pylocalstorage import LocalStorage, WriteStorageError
 import pytest
+import numpy as np
+from pylocalstorage import LocalStorage, WriteStorageError
 
 
 class TestLocalStorage:
@@ -21,6 +22,7 @@ class TestLocalStorage:
             ("x", "this"),
             ("x", "localhost"),
             ("x", {"name": "Brazil", "population": 215e6}),
+            ("x", np.zeros((1080, 1920, 3), dtype=np.uint8),
         ),
     )
     def test_setItem(self, key, value):
