@@ -11,6 +11,8 @@
 
 A package to store data on the hard disk (HD) and make it available to all Python applications running locally!
 
+Version based on the [pickle module](https://docs.python.org/3/library/pickle.html). The pickle module implements binary protocols for serializing and de-serializing a Python object structure.
+
 ## Installation
 
 Simply install **pylocalstorage** package from [PyPI](https://pypi.org/project/pylocalstorage/)
