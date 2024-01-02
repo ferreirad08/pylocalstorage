@@ -5,7 +5,7 @@ import pickle
 class LocalStorage:
     __version__ = "1.4.0"
 
-    path = __file__.replace("main.py", "buffer/")
+    path = __file__.replace("pylocalstorage.py", "buffer/")
 
     def __init__(self) -> None:
         if not os.path.exists(self.path):
