@@ -21,6 +21,10 @@ print(ls.getItem("name"))
 # Removing an item
 ls.removeItem("name")
 
+# Saving numpy array
+import numpy as np
+ls.setItem("array", np.zeros((1080, 1920, 3), dtype=np.uint8))
+
 # Retrieving all existing keys
 for i in range(ls.length):
     print(ls.key(i))
