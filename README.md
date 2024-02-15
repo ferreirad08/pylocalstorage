@@ -36,7 +36,7 @@ $ pip install pylocalstorage
 'David Ferreira'
 >>> ls.removeItem("name")
 >>> import numpy as np
->> arr = np.zeros((1080, 1920, 3), dtype=np.uint8)
+>>> arr = np.zeros((1080, 1920, 3), dtype=np.uint8)
 >>> ls.setItem("array", arr)
 >>> for i in range(ls.length):
 ...     print(ls.key(i))
